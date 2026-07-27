@@ -1,0 +1,11 @@
+name: Sully
+owner: Executive Architecture
+domain: sully
+description: |
+  sully domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

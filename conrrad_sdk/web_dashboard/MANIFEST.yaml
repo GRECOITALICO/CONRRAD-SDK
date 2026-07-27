@@ -1,0 +1,11 @@
+name: Web Dashboard
+owner: Executive Architecture
+domain: web_dashboard
+description: |
+  web_dashboard domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

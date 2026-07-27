@@ -1,0 +1,11 @@
+name: Worker
+owner: Executive Architecture
+domain: worker
+description: |
+  worker domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

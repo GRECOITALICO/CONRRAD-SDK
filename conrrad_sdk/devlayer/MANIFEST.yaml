@@ -1,0 +1,11 @@
+name: Devlayer
+owner: Executive Architecture
+domain: devlayer
+description: |
+  devlayer domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

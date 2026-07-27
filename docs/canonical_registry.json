@@ -1,0 +1,71 @@
+{
+  "registry_version": 1,
+  "ontology_version": 1,
+  "sdk_min_version": "2.0.0",
+  "description": "Machine SSOT for CVS-001 linters. Human ontology: docs/CANONICAL_MODEL.md",
+  "valid_owners": ["Platform", "Execution", "Trust Authority", "Observatory"],
+  "forbidden_terms": [
+    {"pattern": "Kernell SDK", "word_boundary": false},
+    {"pattern": "Kernell Pay", "word_boundary": false},
+    {"pattern": "Kernell", "word_boundary": false},
+    {"pattern": "kernell_", "word_boundary": false},
+    {"pattern": "KERN", "word_boundary": true}
+  ],
+  "lint_paths": [
+    "README.md",
+    "examples",
+    "conrrad_sdk/quickstart",
+    "conrrad_sdk/cli",
+    "conrrad",
+    "conrrad_sdk/templates/hello"
+  ],
+  "text_extensions": [".py", ".md", ".json", ".yaml", ".yml", ".txt"],
+  "symbols": {
+    "CONRRAD": {"canonical_id": "PLATFORM.CONRRAD", "owner": "Platform"},
+    "Agent": {"canonical_id": "EXEC.AGENT", "owner": "Execution"},
+    "RunResult": {"canonical_id": "EXEC.RUN", "owner": "Execution"},
+    "Task": {"canonical_id": "EXEC.TASK", "owner": "Execution"},
+    "Run": {"canonical_id": "EXEC.RUN", "owner": "Execution"},
+    "run": {"canonical_id": "EXEC.RUN", "owner": "Execution"},
+    "Deploy": {"canonical_id": "EXEC.DEPLOY", "owner": "Execution"},
+    "deploy": {"canonical_id": "EXEC.DEPLOY", "owner": "Execution"},
+    "Audit Trail": {"canonical_id": "EXEC.AUDIT_TRAIL", "owner": "Execution"},
+    "Memory": {"canonical_id": "EXEC.MEMORY", "owner": "Execution"},
+    "Runtime": {"canonical_id": "EXEC.RUNTIME", "owner": "Execution"},
+    "Budget": {"canonical_id": "TA.PAY.BUDGET", "owner": "Trust Authority"},
+    "budget_remaining": {"canonical_id": "TA.PAY.BUDGET", "owner": "Trust Authority"},
+    "budget_limit": {"canonical_id": "TA.PAY.BUDGET", "owner": "Trust Authority"},
+    "budget_usage": {"canonical_id": "TA.PAY.USAGE", "owner": "Trust Authority"},
+    "Usage": {"canonical_id": "TA.PAY.USAGE", "owner": "Trust Authority"},
+    "CONRRAD Pay": {"canonical_id": "TA.PAY", "owner": "Trust Authority"},
+    "SEAL": {"canonical_id": "TA.SEAL", "owner": "Trust Authority"},
+    "Citizen": {"canonical_id": "TA.IDENTITY.CITIZEN", "owner": "Trust Authority"},
+    "Observatory": {"canonical_id": "OBS.OBSERVATORY", "owner": "Observatory"},
+    "Trust Authority": {"canonical_id": "TA.PILLAR", "owner": "Trust Authority"},
+    "Deterministic Trust Ledger": {"canonical_id": "TA.LEDGER", "owner": "Trust Authority"}
+  },
+  "canonical_ids": {
+    "PLATFORM.CONRRAD": {"owner": "Platform", "official_name": "CONRRAD"},
+    "EXEC.AGENT": {"owner": "Execution", "official_name": "Agent", "public": true, "since": "2.0.0", "deprecated": null},
+    "EXEC.TASK": {"owner": "Execution", "official_name": "Task", "public": true, "since": "2.0.0", "deprecated": null},
+    "EXEC.RUN": {"owner": "Execution", "official_name": "Run", "public": true, "since": "2.0.0", "deprecated": null},
+    "EXEC.DEPLOY": {"owner": "Execution", "official_name": "Deploy"},
+    "EXEC.AUDIT_TRAIL": {"owner": "Execution", "official_name": "Audit Trail"},
+    "EXEC.MEMORY": {"owner": "Execution", "official_name": "Memory"},
+    "EXEC.RUNTIME": {"owner": "Execution", "official_name": "Runtime"},
+    "TA.IDENTITY.CITIZEN": {"owner": "Trust Authority", "official_name": "Citizen"},
+    "TA.PAY": {"owner": "Trust Authority", "official_name": "CONRRAD Pay"},
+    "TA.PAY.BUDGET": {"owner": "Trust Authority", "official_name": "Budget", "public": true, "since": "2.0.0", "deprecated": null},
+    "TA.PAY.USAGE": {"owner": "Trust Authority", "official_name": "Usage"},
+    "TA.SEAL": {"owner": "Trust Authority", "official_name": "SEAL"},
+    "TA.LEDGER": {"owner": "Trust Authority", "official_name": "Deterministic Trust Ledger"},
+    "TA.PILLAR": {"owner": "Trust Authority", "official_name": "Trust Authority"},
+    "OBS.OBSERVATORY": {"owner": "Observatory", "official_name": "Observatory"}
+  },
+  "ontology": {
+    "api_export_modules": ["conrrad/__init__.py"],
+    "public_class_dirs": ["conrrad_sdk/quickstart"],
+    "ignore_class_names": [],
+    "ignore_identifier_prefixes": ["_"]
+  }
+}

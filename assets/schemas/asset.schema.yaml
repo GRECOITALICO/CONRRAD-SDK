@@ -1,0 +1,41 @@
+# Institutional asset schema v1.1 — see institution/schemas/asset.schema.yaml for full spec
+
+required_fields:
+  - asset_id
+  - name
+  - type
+  - domain
+  - owner
+  - lifecycle
+  - purpose
+  - governed_by
+  - consumed_by
+  - replacement
+
+attributes:
+  persistence: [persistent, ephemeral, dynamic]
+  volatility: [static, dynamic]
+
+memory_profiles:
+  module_default: [spatial, temporal, graph, semantic, governance, execution]
+  citizen_default: [spatial, temporal, graph, semantic, emotional, episodic, procedural, executive, social, economic]
+
+owner_fields:
+  - domain
+  - steward
+
+lifecycle:
+  allowed: [ACTIVE, DEPRECATED, ARCHIVED, RETIRED]
+
+types:
+  - Domain
+  - python_module
+  - Workflow
+  - Document
+  - ADR
+  - Script
+  - Configuration
+  - composite
+  - ephemeral
+  - virtual
+  - external

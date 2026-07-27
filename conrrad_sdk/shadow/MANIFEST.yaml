@@ -1,0 +1,11 @@
+name: Shadow
+owner: Executive Architecture
+domain: shadow
+description: |
+  shadow domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

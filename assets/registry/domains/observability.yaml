@@ -1,0 +1,39 @@
+asset_id: SDK.OBSERVABILITY.DOMAIN
+name: Observability
+type: Domain
+domain: observability
+path: conrrad_sdk/observability/
+
+owner:
+  domain: Observability
+  steward: Executive Architecture
+
+purpose:
+  canonical: observability domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

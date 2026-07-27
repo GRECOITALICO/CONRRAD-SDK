@@ -1,0 +1,7 @@
+recursive-include conrrad_sdk *.json *.yaml *.yml *.md *.txt *.py
+recursive-include conrrad_sdk/templates *
+recursive-include conrrad *.py
+recursive-include kap_escrow *.py
+global-exclude *.so
+global-exclude __pycache__
+global-exclude *.egg-info

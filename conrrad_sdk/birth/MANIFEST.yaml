@@ -1,0 +1,11 @@
+name: Birth
+owner: Executive Architecture
+domain: birth
+description: |
+  birth domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

@@ -1,0 +1,39 @@
+asset_id: SDK.WEB_DASHBOARD.DOMAIN
+name: Web Dashboard
+type: Domain
+domain: web_dashboard
+path: conrrad_sdk/web_dashboard/
+
+owner:
+  domain: Web Dashboard
+  steward: Executive Architecture
+
+purpose:
+  canonical: web_dashboard domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

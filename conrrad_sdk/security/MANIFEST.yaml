@@ -1,0 +1,11 @@
+name: Security
+owner: SEAL Layer
+domain: security
+description: |
+  Execution security and sandbox boundaries.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

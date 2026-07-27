@@ -1,0 +1,39 @@
+asset_id: SDK.PAY.DOMAIN
+name: Pay
+type: Domain
+domain: pay
+path: conrrad_sdk/pay/
+
+owner:
+  domain: Pay
+  steward: Executive Architecture
+
+purpose:
+  canonical: pay domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

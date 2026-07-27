@@ -1,0 +1,11 @@
+name: Export
+owner: Executive Architecture
+domain: export
+description: |
+  export domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

@@ -1,0 +1,11 @@
+name: Cluster
+owner: Executive Architecture
+domain: cluster
+description: |
+  cluster domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

@@ -1,0 +1,11 @@
+name: Testnet
+owner: Executive Architecture
+domain: testnet
+description: |
+  testnet domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

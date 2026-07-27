@@ -1,0 +1,7 @@
+{
+  "root": "/home/anny/CONRRAD/conrrad-sdk",
+  "granularity": "L1",
+  "registry": "/home/anny/CONRRAD/conrrad-sdk/assets/registry/index.yaml",
+  "failures": [],
+  "pass": true
+}

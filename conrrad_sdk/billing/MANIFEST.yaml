@@ -1,0 +1,11 @@
+name: Billing
+owner: Executive Architecture
+domain: billing
+description: |
+  billing domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

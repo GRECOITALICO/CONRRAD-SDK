@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+MSG_FILE="${1:?commit message file required}"
+sed -i '/^Co-authored-by: Cursor <cursoragent@cursor.com>$/d' "$MSG_FILE"

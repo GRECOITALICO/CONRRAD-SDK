@@ -1,0 +1,39 @@
+asset_id: SDK.SECURITY.DOMAIN
+name: Security
+type: Domain
+domain: security
+path: conrrad_sdk/security/
+
+owner:
+  domain: Security
+  steward: SEAL Layer
+
+purpose:
+  canonical: Execution security and sandbox boundaries.
+
+governed_by:
+  - HARLEMM
+  - SEAL Layer
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-005
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

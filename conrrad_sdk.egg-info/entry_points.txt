@@ -1,0 +1,2 @@
+[console_scripts]
+conrrad = conrrad_sdk.cli.__main__:main

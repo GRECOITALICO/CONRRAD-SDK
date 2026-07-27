@@ -1,0 +1,30 @@
+project:
+  name: lineage
+  template: lineage-citizen
+  version: "0.1.0"
+  workspace: ./workspace
+  birth_engine: vs-05
+
+models:
+  local:
+    provider: ollama
+    model: qwen2.5-coder
+    cost_per_1k_tokens: 0.0
+    max_context: 32768
+    tags: [local, lineage]
+
+agents:
+  Lineage:
+    role: lineage_citizen
+    model: local
+    budget_kern: 5.0
+
+router:
+  strategy: policy-based
+  prefer_local: true
+  max_cost_per_task: 0.05
+
+firewall:
+  default_policy: strict
+  auto_approve: [read_file, list_dir]
+  manual_approve: [write_file, execute_command, network_request]

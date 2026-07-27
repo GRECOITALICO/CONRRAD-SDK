@@ -1,0 +1,39 @@
+asset_id: SDK.GOVERNANCE.DOMAIN
+name: Governance
+type: Domain
+domain: governance
+path: conrrad_sdk/governance/
+
+owner:
+  domain: Governance
+  steward: Executive Core
+
+purpose:
+  canonical: Policy and authority enforcement.
+
+governed_by:
+  - HARLEMM
+  - Executive Core
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-004
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

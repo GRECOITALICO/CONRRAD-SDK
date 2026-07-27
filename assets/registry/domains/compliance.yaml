@@ -1,0 +1,39 @@
+asset_id: SDK.COMPLIANCE.DOMAIN
+name: Compliance
+type: Domain
+domain: compliance
+path: conrrad_sdk/compliance/
+
+owner:
+  domain: Compliance
+  steward: Executive Architecture
+
+purpose:
+  canonical: compliance domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

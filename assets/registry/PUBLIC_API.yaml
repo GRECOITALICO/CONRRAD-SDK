@@ -1,0 +1,23 @@
+# Public API index — symbols exported outside the package boundary.
+# CI fails if a public symbol is not listed here (when --strict-api is enabled).
+
+version: "1.0"
+repository: conrrad-sdk
+
+symbols:
+  - name: Agent
+    module: conrrad_sdk.agent
+    domain: runtime
+    lifecycle: ACTIVE
+  - name: RuntimeExecutor
+    module: conrrad_sdk.runtime
+    domain: runtime
+    lifecycle: ACTIVE
+  - name: MemoryManager
+    module: conrrad_sdk.memory
+    domain: memory
+    lifecycle: ACTIVE
+  - name: Wallet
+    module: conrrad_sdk.wallet
+    domain: economy
+    lifecycle: ACTIVE

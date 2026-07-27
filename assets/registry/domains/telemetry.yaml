@@ -1,0 +1,39 @@
+asset_id: SDK.TELEMETRY.DOMAIN
+name: Telemetry
+type: Domain
+domain: telemetry
+path: conrrad_sdk/telemetry/
+
+owner:
+  domain: Telemetry
+  steward: Executive Architecture
+
+purpose:
+  canonical: telemetry domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

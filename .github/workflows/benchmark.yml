@@ -1,0 +1,68 @@
+name: benchmark
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      enforce_gate:
+        description: "Fail on regression"
+        required: false
+        default: "false"
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install -U pip
+          pip install -e .
+          pip install openai
+
+      - name: Run benchmark
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          BENCH_USE_LLM_JUDGE: "1"
+        run: |
+          python scripts/benchmark_runner.py
+          python scripts/benchmark_report.py > benchmark.txt
+
+      - name: Parse report
+        id: parse
+        run: |
+          python - <<'PY'
+          import json, glob, sys
+          from pathlib import Path
+          runs = sorted(Path("benchmarks/runs").glob("*.jsonl"))
+          if not runs:
+              sys.exit(0)
+          latest = runs[-1]
+          rows = [json.loads(l) for l in open(latest)]
+          savings = [r["savings_pct"] for r in rows]
+          qdrop = [r["quality_drop"] for r in rows]
+          report = {
+              "savings_pct": sum(savings)/len(savings),
+              "quality_drop": sum(qdrop)/len(qdrop),
+          }
+          print(report)
+          if report["savings_pct"] < 0.5:
+              print("LOW SAVINGS")
+              sys.exit(2)
+          if report["quality_drop"] > 0.05:
+              print("QUALITY REGRESSION")
+              sys.exit(3)
+          PY
+
+      - name: Soft gate (warn only)
+        if: failure() && github.event.inputs.enforce_gate != 'true'
+        run: echo "⚠️ Benchmark warning (not blocking)"
+
+      - name: Hard gate
+        if: failure() && github.event.inputs.enforce_gate == 'true'
+        run: exit 1

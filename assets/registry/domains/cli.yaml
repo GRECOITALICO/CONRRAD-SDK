@@ -1,0 +1,39 @@
+asset_id: SDK.CLI.DOMAIN
+name: Cli
+type: Domain
+domain: cli
+path: conrrad_sdk/cli/
+
+owner:
+  domain: Cli
+  steward: Executive Architecture
+
+purpose:
+  canonical: cli domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

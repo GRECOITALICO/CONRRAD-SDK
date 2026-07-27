@@ -1,0 +1,39 @@
+asset_id: SDK.INTERNAL.DOMAIN
+name: Internal
+type: Domain
+domain: internal
+path: conrrad_sdk/internal/
+
+owner:
+  domain: Internal
+  steward: Executive Architecture
+
+purpose:
+  canonical: internal domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

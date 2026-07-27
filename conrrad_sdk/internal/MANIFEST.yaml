@@ -1,0 +1,11 @@
+name: Internal
+owner: Executive Architecture
+domain: internal
+description: |
+  internal domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

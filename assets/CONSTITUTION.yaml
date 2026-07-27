@@ -1,0 +1,76 @@
+# CONRRAD SDK — Institutional Constitution v1.1
+# The manifest authorizes existence. Git stores history. The registry defines truth.
+
+constitution:
+  version: "1.1"
+  repository: conrrad-sdk
+  display_name: CONRRAD SDK
+  principle: IAP-001
+
+iap_001: |
+  Everything that participates in the CONRRAD ecosystem is an Institutional Asset.
+  Nothing may exist outside the Asset Registry. The repository is a projection.
+
+registry:
+  index: assets/registry/index.yaml
+  public_api: assets/registry/PUBLIC_API.yaml
+  domains: assets/registry/domains/
+  global_index: institution/registry/index.yaml
+
+lifecycle:
+  persistent:
+    - PROPOSED
+    - DECLARED
+    - REVIEWED
+    - APPROVED
+    - CREATED
+    - CERTIFIED
+    - ACTIVE
+    - DEPRECATED
+    - ARCHIVED
+    - REMOVED
+  ephemeral:
+    - DECLARED
+    - ALLOCATED
+    - EXECUTING
+    - COMPLETED
+    - EXPIRED
+    - DESTROYED
+
+domain_rules:
+  single_domain: true
+  manifest_required: MANIFEST.yaml
+  five_questions_required: true
+
+gates:
+  - root_zero
+  - asset_registry
+  - ownership
+  - vocabulary
+  - identity
+  - architecture
+  - institutional_score
+
+score:
+  merge_minimum: 95.0
+  dimensions:
+    - identity
+    - architecture
+    - security
+    - documentation
+    - tests
+    - governance
+    - ownership
+    - lifecycle
+
+documentation:
+  overview: docs/CONRRAD_IAG_OVERVIEW_v1.md
+  constitution: docs/CONRRAD_INSTITUTIONAL_CONSTITUTION_v1.md
+  taxonomy: docs/CONRRAD_INSTITUTIONAL_TAXONOMY_v1.md
+  lifecycle: docs/CONRRAD_INSTITUTIONAL_LIFECYCLE_v1.md
+  certification: docs/CONRRAD_INSTITUTIONAL_CERTIFICATION_v1.md
+  memory_projection: docs/CONRRAD_MEMORY_PROJECTION_v1.md
+  asset_model: docs/CONRRAD_ASSET_GOVERNANCE_MODEL_v1.md
+  workspace_policy: docs/CONRRAD_INSTITUTIONAL_WORKSPACE_POLICY_v1.md
+
+agent_entry: CURSOR.md

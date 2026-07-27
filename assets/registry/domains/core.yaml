@@ -1,0 +1,39 @@
+asset_id: SDK.CORE.DOMAIN
+name: Core
+type: Domain
+domain: core
+path: conrrad_sdk/core/
+
+owner:
+  domain: Core
+  steward: Executive Core
+
+purpose:
+  canonical: Foundation primitives shared across domains.
+
+governed_by:
+  - HARLEMM
+  - Executive Core
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-001
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

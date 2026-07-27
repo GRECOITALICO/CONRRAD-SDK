@@ -1,0 +1,39 @@
+asset_id: SDK.QUICKSTART.DOMAIN
+name: Quickstart
+type: Domain
+domain: quickstart
+path: conrrad_sdk/quickstart/
+
+owner:
+  domain: Quickstart
+  steward: Executive Architecture
+
+purpose:
+  canonical: quickstart domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

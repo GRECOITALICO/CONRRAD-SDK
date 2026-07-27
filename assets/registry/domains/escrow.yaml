@@ -1,0 +1,39 @@
+asset_id: SDK.ESCROW.DOMAIN
+name: Escrow
+type: Domain
+domain: escrow
+path: conrrad_sdk/escrow/
+
+owner:
+  domain: Escrow
+  steward: Executive Architecture
+
+purpose:
+  canonical: Canonical escrow runtime.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-003
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

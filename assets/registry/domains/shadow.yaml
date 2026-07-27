@@ -1,0 +1,39 @@
+asset_id: SDK.SHADOW.DOMAIN
+name: Shadow
+type: Domain
+domain: shadow
+path: conrrad_sdk/shadow/
+
+owner:
+  domain: Shadow
+  steward: Executive Architecture
+
+purpose:
+  canonical: shadow domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

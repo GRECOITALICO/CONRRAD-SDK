@@ -1,0 +1,11 @@
+name: Router
+owner: Executive Architecture
+domain: router
+description: |
+  router domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

@@ -1,0 +1,11 @@
+name: Marketplace
+owner: Executive Architecture
+domain: marketplace
+description: |
+  marketplace domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

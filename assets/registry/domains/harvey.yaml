@@ -1,0 +1,39 @@
+asset_id: SDK.HARVEY.DOMAIN
+name: Harvey
+type: Domain
+domain: harvey
+path: conrrad_sdk/harvey/
+
+owner:
+  domain: Harvey
+  steward: Executive Architecture
+
+purpose:
+  canonical: harvey domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

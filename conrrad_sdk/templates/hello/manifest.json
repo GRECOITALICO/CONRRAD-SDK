@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "conrrad-project-manifest/v1",
+  "id": "hello",
+  "name": "Hello CONRRAD",
+  "description": "Minimal local Quick Start project — no Docker required.",
+  "version": "1.0.0",
+  "template": "hello",
+  "mode": "local-quickstart",
+  "runtime_profile": "local"
+}

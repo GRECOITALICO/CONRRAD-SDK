@@ -1,0 +1,11 @@
+name: Swarm
+owner: Executive Architecture
+domain: swarm
+description: |
+  swarm domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

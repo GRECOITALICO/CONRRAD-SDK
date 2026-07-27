@@ -1,0 +1,39 @@
+asset_id: SDK.CITIZEN.DOMAIN
+name: Citizen
+type: Domain
+domain: citizen
+path: conrrad_sdk/citizen/
+
+owner:
+  domain: Citizen
+  steward: Executive Architecture
+
+purpose:
+  canonical: citizen domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

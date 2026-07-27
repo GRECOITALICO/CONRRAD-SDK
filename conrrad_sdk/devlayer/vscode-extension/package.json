@@ -1,0 +1,120 @@
+{
+  "name": "conrrad-devlayer",
+  "displayName": "Conrrad OS DevLayer",
+  "description": "Distributed AI coding with verified execution, agent competition, and economic consensus",
+  "version": "0.1.0",
+  "publisher": "conrrad",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Programming Languages", "Machine Learning", "Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "conrrad.ask",
+        "title": "Conrrad: Ask (Submit Task to Network)",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "conrrad.askInline",
+        "title": "Conrrad: Ask Inline (Cmd+K)",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "conrrad.review",
+        "title": "Conrrad: Review Pending Receipts",
+        "icon": "$(checklist)"
+      },
+      {
+        "command": "conrrad.index",
+        "title": "Conrrad: Index Codebase",
+        "icon": "$(search)"
+      },
+      {
+        "command": "conrrad.status",
+        "title": "Conrrad: Task Pipeline Status",
+        "icon": "$(pulse)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "conrrad.askInline",
+        "key": "ctrl+k",
+        "mac": "cmd+k",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "conrrad.ask",
+        "key": "ctrl+shift+k",
+        "mac": "cmd+shift+k"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "conrrad-sidebar",
+          "title": "Conrrad OS",
+          "icon": "resources/conrrad-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "conrrad-sidebar": [
+        {
+          "id": "conrrad.tasks",
+          "name": "Active Tasks"
+        },
+        {
+          "id": "conrrad.receipts",
+          "name": "Execution Receipts"
+        },
+        {
+          "id": "conrrad.agents",
+          "name": "Agent Marketplace"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Conrrad OS",
+      "properties": {
+        "conrrad.networkUrl": {
+          "type": "string",
+          "default": "localhost:50051",
+          "description": "Conrrad P2P network gRPC endpoint"
+        },
+        "conrrad.autoIndex": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically index codebase on startup"
+        },
+        "conrrad.trustLevel": {
+          "type": "string",
+          "enum": ["safe", "review", "strict"],
+          "default": "review",
+          "description": "Auto-apply trust level for agent changes"
+        },
+        "conrrad.maxAgents": {
+          "type": "number",
+          "default": 3,
+          "description": "Maximum competing agents per task"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.0",
+    "@grpc/proto-loader": "^0.7.0"
+  }
+}

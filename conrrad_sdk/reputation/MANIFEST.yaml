@@ -1,0 +1,11 @@
+name: Reputation
+owner: Executive Architecture
+domain: reputation
+description: |
+  reputation domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

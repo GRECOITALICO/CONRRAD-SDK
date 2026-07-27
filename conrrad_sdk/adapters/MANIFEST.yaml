@@ -1,0 +1,11 @@
+name: Adapters
+owner: Executive Architecture
+domain: adapters
+description: |
+  adapters domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

@@ -1,0 +1,39 @@
+asset_id: SDK.BILLING.DOMAIN
+name: Billing
+type: Domain
+domain: billing
+path: conrrad_sdk/billing/
+
+owner:
+  domain: Billing
+  steward: Executive Architecture
+
+purpose:
+  canonical: billing domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

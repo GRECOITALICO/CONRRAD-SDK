@@ -1,0 +1,11 @@
+name: Learning
+owner: Executive Architecture
+domain: learning
+description: |
+  learning domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

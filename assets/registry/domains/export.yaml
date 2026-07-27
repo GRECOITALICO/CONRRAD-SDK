@@ -1,0 +1,39 @@
+asset_id: SDK.EXPORT.DOMAIN
+name: Export
+type: Domain
+domain: export
+path: conrrad_sdk/export/
+
+owner:
+  domain: Export
+  steward: Executive Architecture
+
+purpose:
+  canonical: export domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

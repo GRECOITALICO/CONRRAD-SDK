@@ -1,0 +1,11 @@
+name: Escrow
+owner: Executive Architecture
+domain: escrow
+description: |
+  Canonical escrow runtime.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

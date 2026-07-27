@@ -1,0 +1,11 @@
+name: Governance
+owner: Executive Core
+domain: governance
+description: |
+  Policy and authority enforcement.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

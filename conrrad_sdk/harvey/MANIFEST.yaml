@@ -1,0 +1,11 @@
+name: Harvey
+owner: Executive Architecture
+domain: harvey
+description: |
+  harvey domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

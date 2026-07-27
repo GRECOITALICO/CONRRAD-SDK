@@ -1,0 +1,39 @@
+asset_id: SDK.TEMPLATES.DOMAIN
+name: Templates
+type: Domain
+domain: templates
+path: conrrad_sdk/templates/
+
+owner:
+  domain: Templates
+  steward: Executive Architecture
+
+purpose:
+  canonical: templates domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

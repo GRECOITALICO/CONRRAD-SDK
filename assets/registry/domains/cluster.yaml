@@ -1,0 +1,39 @@
+asset_id: SDK.CLUSTER.DOMAIN
+name: Cluster
+type: Domain
+domain: cluster
+path: conrrad_sdk/cluster/
+
+owner:
+  domain: Cluster
+  steward: Executive Architecture
+
+purpose:
+  canonical: cluster domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

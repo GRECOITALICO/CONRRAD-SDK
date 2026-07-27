@@ -1,0 +1,5 @@
+project:
+  name: hello
+  template: hello
+  version: "1.0.0"
+  mode: local-quickstart

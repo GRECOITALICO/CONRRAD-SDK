@@ -1,0 +1,33 @@
+project:
+  name: harvey
+  template: harvey-reference-application
+  version: "0.1.0"
+  workspace: ./workspace
+
+models:
+  local:
+    provider: ollama
+    model: qwen2.5-coder
+    cost_per_1k_tokens: 0.0
+    max_context: 32768
+    tags: [local, code, reasoning]
+
+agents:
+  Harlemm:
+    role: planner
+    model: local
+    budget_kern: 10.0
+  Sully:
+    role: coder
+    model: local
+    budget_kern: 15.0
+
+router:
+  strategy: policy-based
+  prefer_local: true
+  max_cost_per_task: 0.10
+
+firewall:
+  default_policy: strict
+  auto_approve: [read_file, list_dir]
+  manual_approve: [write_file, execute_command, network_request]

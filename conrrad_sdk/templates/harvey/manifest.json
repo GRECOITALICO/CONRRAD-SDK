@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "conrrad-project-manifest/v1",
+  "id": "harvey",
+  "name": "Harvey Reference Application",
+  "description": "Reference Application for Vertical Slice certification — legal cognitive assistant (Harlemm + Sully).",
+  "version": "0.1.0",
+  "template": "harvey",
+  "agents": {
+    "Harlemm": { "role": "planner" },
+    "Sully": { "role": "inference" }
+  },
+  "runtime_profile": "development"
+}

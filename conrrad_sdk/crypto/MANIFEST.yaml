@@ -1,0 +1,11 @@
+name: Crypto
+owner: Executive Architecture
+domain: crypto
+description: |
+  crypto domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

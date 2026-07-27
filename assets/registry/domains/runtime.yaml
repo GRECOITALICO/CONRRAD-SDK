@@ -1,0 +1,39 @@
+asset_id: SDK.RUNTIME.DOMAIN
+name: Runtime
+type: Domain
+domain: runtime
+path: conrrad_sdk/runtime/
+
+owner:
+  domain: Runtime
+  steward: Executive Core
+
+purpose:
+  canonical: Persistent cognitive execution layer.
+
+governed_by:
+  - HARLEMM
+  - Executive Core
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-001
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"

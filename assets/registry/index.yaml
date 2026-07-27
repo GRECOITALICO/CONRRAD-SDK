@@ -1,0 +1,249 @@
+registry_version: '1.0'
+repository: conrrad-sdk
+package: conrrad_sdk
+domains:
+- name: adapters
+  asset_id: SDK.ADAPTERS.DOMAIN
+  registry: assets/registry/domains/adapters.yaml
+  manifest: conrrad_sdk/adapters/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: benchmarks
+  asset_id: SDK.BENCHMARKS.DOMAIN
+  registry: assets/registry/domains/benchmarks.yaml
+  manifest: conrrad_sdk/benchmarks/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: billing
+  asset_id: SDK.BILLING.DOMAIN
+  registry: assets/registry/domains/billing.yaml
+  manifest: conrrad_sdk/billing/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: birth
+  asset_id: SDK.BIRTH.DOMAIN
+  registry: assets/registry/domains/birth.yaml
+  manifest: conrrad_sdk/birth/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: citizen
+  asset_id: SDK.CITIZEN.DOMAIN
+  registry: assets/registry/domains/citizen.yaml
+  manifest: conrrad_sdk/citizen/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: cli
+  asset_id: SDK.CLI.DOMAIN
+  registry: assets/registry/domains/cli.yaml
+  manifest: conrrad_sdk/cli/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: cluster
+  asset_id: SDK.CLUSTER.DOMAIN
+  registry: assets/registry/domains/cluster.yaml
+  manifest: conrrad_sdk/cluster/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: cognitive
+  asset_id: SDK.COGNITIVE.DOMAIN
+  registry: assets/registry/domains/cognitive.yaml
+  manifest: conrrad_sdk/cognitive/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: compliance
+  asset_id: SDK.COMPLIANCE.DOMAIN
+  registry: assets/registry/domains/compliance.yaml
+  manifest: conrrad_sdk/compliance/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: core
+  asset_id: SDK.CORE.DOMAIN
+  registry: assets/registry/domains/core.yaml
+  manifest: conrrad_sdk/core/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: crypto
+  asset_id: SDK.CRYPTO.DOMAIN
+  registry: assets/registry/domains/crypto.yaml
+  manifest: conrrad_sdk/crypto/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: delegation
+  asset_id: SDK.DELEGATION.DOMAIN
+  registry: assets/registry/domains/delegation.yaml
+  manifest: conrrad_sdk/delegation/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: devlayer
+  asset_id: SDK.DEVLAYER.DOMAIN
+  registry: assets/registry/domains/devlayer.yaml
+  manifest: conrrad_sdk/devlayer/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: escrow
+  asset_id: SDK.ESCROW.DOMAIN
+  registry: assets/registry/domains/escrow.yaml
+  manifest: conrrad_sdk/escrow/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: events
+  asset_id: SDK.EVENTS.DOMAIN
+  registry: assets/registry/domains/events.yaml
+  manifest: conrrad_sdk/events/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: export
+  asset_id: SDK.EXPORT.DOMAIN
+  registry: assets/registry/domains/export.yaml
+  manifest: conrrad_sdk/export/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: governance
+  asset_id: SDK.GOVERNANCE.DOMAIN
+  registry: assets/registry/domains/governance.yaml
+  manifest: conrrad_sdk/governance/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: harvey
+  asset_id: SDK.HARVEY.DOMAIN
+  registry: assets/registry/domains/harvey.yaml
+  manifest: conrrad_sdk/harvey/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: internal
+  asset_id: SDK.INTERNAL.DOMAIN
+  registry: assets/registry/domains/internal.yaml
+  manifest: conrrad_sdk/internal/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: learning
+  asset_id: SDK.LEARNING.DOMAIN
+  registry: assets/registry/domains/learning.yaml
+  manifest: conrrad_sdk/learning/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: llm
+  asset_id: SDK.LLM.DOMAIN
+  registry: assets/registry/domains/llm.yaml
+  manifest: conrrad_sdk/llm/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: marketplace
+  asset_id: SDK.MARKETPLACE.DOMAIN
+  registry: assets/registry/domains/marketplace.yaml
+  manifest: conrrad_sdk/marketplace/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: network
+  asset_id: SDK.NETWORK.DOMAIN
+  registry: assets/registry/domains/network.yaml
+  manifest: conrrad_sdk/network/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: observability
+  asset_id: SDK.OBSERVABILITY.DOMAIN
+  registry: assets/registry/domains/observability.yaml
+  manifest: conrrad_sdk/observability/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: pay
+  asset_id: SDK.PAY.DOMAIN
+  registry: assets/registry/domains/pay.yaml
+  manifest: conrrad_sdk/pay/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: quickstart
+  asset_id: SDK.QUICKSTART.DOMAIN
+  registry: assets/registry/domains/quickstart.yaml
+  manifest: conrrad_sdk/quickstart/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: reputation
+  asset_id: SDK.REPUTATION.DOMAIN
+  registry: assets/registry/domains/reputation.yaml
+  manifest: conrrad_sdk/reputation/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: router
+  asset_id: SDK.ROUTER.DOMAIN
+  registry: assets/registry/domains/router.yaml
+  manifest: conrrad_sdk/router/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: runtime
+  asset_id: SDK.RUNTIME.DOMAIN
+  registry: assets/registry/domains/runtime.yaml
+  manifest: conrrad_sdk/runtime/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: security
+  asset_id: SDK.SECURITY.DOMAIN
+  registry: assets/registry/domains/security.yaml
+  manifest: conrrad_sdk/security/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: shadow
+  asset_id: SDK.SHADOW.DOMAIN
+  registry: assets/registry/domains/shadow.yaml
+  manifest: conrrad_sdk/shadow/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: sully
+  asset_id: SDK.SULLY.DOMAIN
+  registry: assets/registry/domains/sully.yaml
+  manifest: conrrad_sdk/sully/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: swarm
+  asset_id: SDK.SWARM.DOMAIN
+  registry: assets/registry/domains/swarm.yaml
+  manifest: conrrad_sdk/swarm/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: telemetry
+  asset_id: SDK.TELEMETRY.DOMAIN
+  registry: assets/registry/domains/telemetry.yaml
+  manifest: conrrad_sdk/telemetry/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: templates
+  asset_id: SDK.TEMPLATES.DOMAIN
+  registry: assets/registry/domains/templates.yaml
+  manifest: conrrad_sdk/templates/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: testnet
+  asset_id: SDK.TESTNET.DOMAIN
+  registry: assets/registry/domains/testnet.yaml
+  manifest: conrrad_sdk/testnet/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: tools
+  asset_id: SDK.TOOLS.DOMAIN
+  registry: assets/registry/domains/tools.yaml
+  manifest: conrrad_sdk/tools/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: web_dashboard
+  asset_id: SDK.WEB_DASHBOARD.DOMAIN
+  registry: assets/registry/domains/web_dashboard.yaml
+  manifest: conrrad_sdk/web_dashboard/MANIFEST.yaml
+  lifecycle: ACTIVE
+- name: worker
+  asset_id: SDK.WORKER.DOMAIN
+  registry: assets/registry/domains/worker.yaml
+  manifest: conrrad_sdk/worker/MANIFEST.yaml
+  lifecycle: ACTIVE
+root_modules:
+- _legacy_alias.py
+- _sunset_telemetry.py
+- agent.py
+- agent_perception.py
+- agent_persistence.py
+- agent_reliability.py
+- agent_runtime.py
+- agent_validation.py
+- agent_world_model.py
+- browser.py
+- budget.py
+- budget_killer.py
+- chaos_engine.py
+- config.py
+- constants.py
+- crypto.py
+- dashboard.py
+- dashboard_metrics.py
+- economic_agent.py
+- economic_engine.py
+- execution_gate.py
+- execution_security.py
+- formal_verifier.py
+- gui.py
+- hardware.py
+- health.py
+- identity.py
+- interaction_router.py
+- launcher.py
+- log_redactor.py
+- marketplace_agent.py
+- memory.py
+- old_cli.py
+- orchestrator.py
+- os_controller.py
+- persister.py
+- policy_engine.py
+- resilience.py
+- risk_engine.py
+- runtime_events.py
+- sandbox.py
+- skill_loader.py
+- slo_engine.py
+- slo_report.py
+- telemetry.py
+- token_estimator.py
+- tracer.py
+- tracing.py
+- wallet.py

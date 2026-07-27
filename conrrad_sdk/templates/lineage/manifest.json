@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "conrrad-project-manifest/v1",
+  "id": "lineage",
+  "name": "Lineage Citizen",
+  "description": "VS-05 Birth Engine — Citizen de nueva generación con herencia contextual del Founder Model certificado.",
+  "version": "0.1.0",
+  "template": "lineage",
+  "agents": {
+    "Lineage": { "role": "lineage_citizen" }
+  },
+  "runtime_profile": "lineage",
+  "requires": {
+    "founder_model": "certified_bundle",
+    "founderos_roadmap": "founderos.roadmap.v1"
+  }
+}

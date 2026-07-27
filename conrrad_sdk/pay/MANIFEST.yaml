@@ -1,0 +1,11 @@
+name: Pay
+owner: Executive Architecture
+domain: pay
+description: |
+  pay domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

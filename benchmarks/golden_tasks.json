@@ -1,0 +1,99 @@
+[
+  {
+    "task_id": "easy_1",
+    "difficulty_target": "easy",
+    "input": "Extract the email address from this text: 'Contact us at support@kernellos.com for help.'",
+    "expected_properties": {
+      "keywords": ["support@kernellos.com"],
+      "must_contain": "support@kernellos.com"
+    }
+  },
+  {
+    "task_id": "easy_2",
+    "difficulty_target": "easy",
+    "input": "Classify the sentiment of this review as POSITIVE, NEGATIVE, or NEUTRAL: 'The app crashes constantly and deleted my data.'",
+    "expected_properties": {
+      "keywords": ["NEGATIVE", "negative"]
+    }
+  },
+  {
+    "task_id": "easy_3",
+    "difficulty_target": "easy",
+    "input": "Format this list as JSON: apples, bananas, cherries.",
+    "expected_properties": {
+      "keywords": ["[", "]", "apples", "bananas", "cherries"]
+    }
+  },
+  {
+    "task_id": "med_1",
+    "difficulty_target": "medium",
+    "input": "Explain the difference between concurrent and parallel execution in programming, using a restaurant analogy.",
+    "expected_properties": {
+      "keywords": ["restaurant", "chef", "waiter", "concurrent", "parallel"]
+    }
+  },
+  {
+    "task_id": "med_2",
+    "difficulty_target": "medium",
+    "input": "Write a Python script to read a CSV file called 'data.csv' and print the average of the 'price' column.",
+    "expected_properties": {
+      "keywords": ["import csv", "pandas", "read_csv", "price", "mean", "average"]
+    }
+  },
+  {
+    "task_id": "med_3",
+    "difficulty_target": "medium",
+    "input": "Summarize the key plot points of Romeo and Juliet in exactly 3 bullet points.",
+    "expected_properties": {
+      "keywords": ["Montague", "Capulet", "poison", "death"]
+    }
+  },
+  {
+    "task_id": "med_4",
+    "difficulty_target": "medium",
+    "input": "Convert this Python list comprehension `[x*2 for x in nums if x > 5]` into an equivalent map/filter expression in JavaScript.",
+    "expected_properties": {
+      "keywords": ["map", "filter", "=>", "2"]
+    }
+  },
+  {
+    "task_id": "med_5",
+    "difficulty_target": "medium",
+    "input": "Identify three logical fallacies in this statement: 'If we ban single-use plastics, we will inevitably ban all plastics, which means hospitals won't have syringes, and millions will die. Therefore, we shouldn't ban plastic straws.'",
+    "expected_properties": {
+      "keywords": ["slippery slope", "straw man", "false equivalence", "fallacy"]
+    }
+  },
+  {
+    "task_id": "hard_1",
+    "difficulty_target": "hard",
+    "input": "Design a system architecture for a globally distributed multiplayer game matchmaking service. Requirements: <100ms latency, handles 1M concurrent users, fair skill matching. Outline the database choices, scaling strategy, and provide a mermaid sequence diagram of the matchmaking flow.",
+    "expected_properties": {
+      "keywords": ["Redis", "matchmaking", "websocket", "mermaid", "sequenceDiagram"]
+    }
+  },
+  {
+    "task_id": "hard_2",
+    "difficulty_target": "hard",
+    "input": "Write a complete, optimized Rust function to solve the Longest Palindromic Substring problem using Manacher's Algorithm. Include inline comments explaining the state transitions.",
+    "expected_properties": {
+      "keywords": ["fn ", "String", "Manacher", "center", "radius"]
+    }
+  },
+  {
+    "task_id": "hard_3",
+    "difficulty_target": "hard",
+    "input": "You are debugging a Kubernetes cluster where pods in namespace A cannot reach services in namespace B, but only on Tuesdays between 2 AM and 4 AM UTC. What are the top 4 highly obscure edge-case root causes, and what exact kubectl or tcpdump commands would you run to prove each one?",
+    "expected_properties": {
+      "keywords": ["cron", "networkpolicy", "tcpdump", "kubectl", "cilium", "calico", "conntrack"]
+    }
+  },
+  {
+    "task_id": "hard_4",
+    "difficulty_target": "hard",
+    "input": "Analyze the philosophical implications of the Ship of Theseus paradox specifically applied to mind uploading and digital continuity of consciousness. Synthesize views from Derek Parfit and Daniel Dennett. Max 2 paragraphs.",
+    "expected_properties": {
+      "keywords": ["Parfit", "Dennett", "continuity", "identity", "psychological"]
+    }
+  }
+]

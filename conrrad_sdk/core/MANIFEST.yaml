@@ -1,0 +1,11 @@
+name: Core
+owner: Executive Core
+domain: core
+description: |
+  Foundation primitives shared across domains.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

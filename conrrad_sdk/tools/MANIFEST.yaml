@@ -1,0 +1,11 @@
+name: Tools
+owner: Executive Architecture
+domain: tools
+description: |
+  tools domain.
+contains_glob:
+  - "**/*"
+public_api: []
+forbidden:
+  - UI
+  - ad-hoc scripts

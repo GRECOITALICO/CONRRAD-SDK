@@ -1,0 +1,1306 @@
+{
+  "schema": "event-idl/v1",
+  "description": "FROZEN \u2014 Event Interface Definition Language (not a flat catalog)",
+  "derived": {
+    "event_type": "{aggregate}.{event}",
+    "note": "event_type is computed at runtime \u2014 never persisted in event store"
+  },
+  "versioning": {
+    "idl_version": "Versions the event definition (consumers, projection_targets)",
+    "payload_version": "Maps to envelope schema_version \u2014 versions payload only",
+    "policy": "Option A \u2014 see docs/CONTRACT_VERSIONING_POLICY.md"
+  },
+  "lifecycle_values": [
+    "research",
+    "beta",
+    "stable",
+    "deprecated",
+    "removed"
+  ],
+  "domains": {
+    "business": {
+      "capital": {
+        "OpportunityCreated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/capital-opportunity-created-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "graph",
+            "memory"
+          ],
+          "domain_consumers": [
+            "BusinessOS"
+          ],
+          "technical_consumers": [
+            "GraphProjector",
+            "MemoryProjector"
+          ],
+          "triggers": [
+            "CapitalDAGEvaluated"
+          ]
+        },
+        "OpportunityQualified": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "graph"
+          ],
+          "domain_consumers": [
+            "BusinessOS"
+          ],
+          "technical_consumers": [
+            "GraphProjector"
+          ],
+          "triggers": [
+            "MissionGenerated"
+          ]
+        },
+        "OpportunityRejected": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "graph"
+          ],
+          "domain_consumers": [
+            "BusinessOS"
+          ],
+          "technical_consumers": [
+            "GraphProjector"
+          ],
+          "triggers": []
+        },
+        "OpportunityStageChanged": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "graph"
+          ],
+          "domain_consumers": [
+            "BusinessOS"
+          ],
+          "technical_consumers": [
+            "GraphProjector"
+          ],
+          "triggers": []
+        },
+        "CapitalDAGEvaluated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/capital-capital-dag-evaluated-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "graph",
+            "observability"
+          ],
+          "domain_consumers": [
+            "BusinessOS",
+            "Governance"
+          ],
+          "technical_consumers": [
+            "GraphProjector",
+            "ObservatoryProjector",
+            "PriorityEngine"
+          ],
+          "triggers": [
+            "MissionGenerated"
+          ]
+        },
+        "RunwayUpdated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "observability"
+          ],
+          "domain_consumers": [
+            "BusinessOS"
+          ],
+          "technical_consumers": [
+            "ObservabilityProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "grant": {
+        "DraftCreated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "PrerequisiteSatisfied": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "ApplicationReady": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Awarded": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Rejected": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Won": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Lost": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Identified": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [
+            "BusinessOS"
+          ],
+          "technical_consumers": [
+            "MemoryProjector",
+            "GrantHunter"
+          ],
+          "triggers": [
+            "DraftCreated"
+          ]
+        },
+        "Submitted": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "graph",
+            "memory"
+          ],
+          "domain_consumers": [
+            "BusinessOS"
+          ],
+          "technical_consumers": [
+            "GraphProjector",
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "investment": {
+        "MeetingScheduled": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "MeetingHeld": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "RequestedFollowup": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "SAFEReceived": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "SAFEAccepted": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "SAFERejected": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "SAFEExecuted": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "application": {
+        "Started": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Submitted": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Updated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Drafted": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "customer": {
+        "LeadCreated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "PilotStarted": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Converted": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "economics": {
+        "RevenueRecognized": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "AssetRegistered": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "AssetTransferred": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "DomainPurchased": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "organization": {
+        "Created": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "EntityIncorporated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "evidence": {
+        "Published": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "RoadmapUpdated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "InvestorViewExported": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "mission": {
+        "Assigned": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Completed": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Generated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [
+            "BusinessOS",
+            "Governance"
+          ],
+          "technical_consumers": [
+            "MissionGenerator",
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "governance": {
+        "ConstitutionalEscalation": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [
+            "BusinessOS",
+            "Governance"
+          ],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      }
+    },
+    "citizen": {
+      "citizen": {
+        "Born": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "genome",
+            "state"
+          ],
+          "domain_consumers": [
+            "Governance"
+          ],
+          "technical_consumers": [
+            "CitizenRegistry",
+            "GenomeProjector",
+            "StateProjector"
+          ],
+          "triggers": [
+            "Enrolled"
+          ]
+        },
+        "Enrolled": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "observability"
+          ],
+          "domain_consumers": [
+            "Governance"
+          ],
+          "technical_consumers": [
+            "ObservabilityProjector"
+          ],
+          "triggers": []
+        },
+        "CapabilityUpdated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history",
+            "learning"
+          ],
+          "projection_targets": [
+            "genome"
+          ],
+          "domain_consumers": [
+            "Marketplace"
+          ],
+          "technical_consumers": [
+            "GenomeProjector"
+          ],
+          "triggers": []
+        },
+        "LearningUpdated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history",
+            "learning"
+          ],
+          "projection_targets": [
+            "genome"
+          ],
+          "domain_consumers": [
+            "Governance"
+          ],
+          "technical_consumers": [
+            "GenomeProjector"
+          ],
+          "triggers": []
+        },
+        "ExperienceUpdated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history",
+            "experience"
+          ],
+          "projection_targets": [
+            "genome",
+            "observability"
+          ],
+          "domain_consumers": [
+            "Marketplace"
+          ],
+          "technical_consumers": [
+            "GenomeProjector",
+            "ObservabilityProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "project": {
+        "Created": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Migrated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "MigrationCompleted": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history",
+            "experience",
+            "learning"
+          ],
+          "projection_targets": [
+            "genome",
+            "state"
+          ],
+          "domain_consumers": [
+            "Governance",
+            "CEL"
+          ],
+          "technical_consumers": [
+            "GenomeProjector",
+            "StateProjector",
+            "OMEGA"
+          ],
+          "triggers": []
+        }
+      },
+      "mission": {
+        "Started": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Completed": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "intent": {
+        "Created": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "research",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "inference": {
+        "Executed": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "DistillationCompleted": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "marketplace": {
+        "JobStarted": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "CapabilityDeclared": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "JobFinished": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history",
+            "experience"
+          ],
+          "projection_targets": [
+            "genome",
+            "observability"
+          ],
+          "domain_consumers": [
+            "Marketplace"
+          ],
+          "technical_consumers": [
+            "GenomeProjector",
+            "ObservabilityProjector",
+            "CONRRADPay"
+          ],
+          "triggers": []
+        },
+        "JobFailed": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history",
+            "experience"
+          ],
+          "projection_targets": [
+            "genome"
+          ],
+          "domain_consumers": [
+            "Marketplace"
+          ],
+          "technical_consumers": [
+            "GenomeProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "pay": {
+        "EscrowLocked": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "EscrowReleased": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "governance": {
+        "Denied": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "Escalated": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "IncidentReported": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        },
+        "IncidentRecovered": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history"
+          ],
+          "projection_targets": [
+            "memory"
+          ],
+          "domain_consumers": [],
+          "technical_consumers": [
+            "MemoryProjector"
+          ],
+          "triggers": []
+        }
+      },
+      "pattern": {
+        "Contributed": {
+          "version": 1,
+          "payload_version": 1,
+          "lifecycle": "stable",
+          "payload_schema": "payloads/generic-v1.schema.json",
+          "semantic_effects": [
+            "history",
+            "patterns"
+          ],
+          "projection_targets": [],
+          "domain_consumers": [
+            "CEL"
+          ],
+          "technical_consumers": [
+            "OMEGAMaster"
+          ],
+          "triggers": []
+        }
+      }
+    }
+  },
+  "legacy_type_map": {
+    "CitizenBorn": [
+      "citizen",
+      "Born"
+    ],
+    "MigrationCompleted": [
+      "project",
+      "MigrationCompleted"
+    ],
+    "MissionCompleted": [
+      "mission",
+      "Completed"
+    ],
+    "MarketplaceJobFinished": [
+      "marketplace",
+      "JobFinished"
+    ],
+    "OpportunityCreated": [
+      "capital",
+      "OpportunityCreated"
+    ],
+    "GrantSubmitted": [
+      "grant",
+      "Submitted"
+    ],
+    "InvestorMeetingHeld": [
+      "investment",
+      "MeetingHeld"
+    ],
+    "ApplicationSubmitted": [
+      "application",
+      "Submitted"
+    ],
+    "MissionGenerated": [
+      "mission",
+      "Generated"
+    ],
+    "ConstitutionalEscalation": [
+      "governance",
+      "ConstitutionalEscalation"
+    ]
+  }
+}

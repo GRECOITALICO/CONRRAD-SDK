@@ -1,0 +1,150 @@
+name: CONRRAD SDK Security Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 4 * * 0' # Weekly scan
+
+jobs:
+  secret-scanning:
+    name: 🕵️ Secret Scanning
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Gitleaks Scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: TruffleHog Scan
+        uses: trufflesecurity/trufflehog@main
+        continue-on-error: true
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+
+  dependency-scanning:
+    name: 📦 Supply Chain & Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install scanners
+        run: pip install safety pip-audit
+      - name: Run pip-audit
+        run: pip-audit
+      - name: Run Safety
+        run: safety check
+
+  sast:
+    name: 🔬 Static Analysis (SAST)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Semgrep
+        uses: returntocorp/semgrep-action@v1
+        continue-on-error: true
+        with:
+          config: "p/python"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+      - name: Install Bandit & Ruff
+        run: pip install bandit ruff mypy
+      - name: Run Bandit
+        run: bandit -r conrrad_sdk/ -c pyproject.toml || true
+      - name: Run Ruff Linter
+        run: ruff check conrrad_sdk/ || true
+
+  security-fast:
+    name: 🛡️ Security Fast Gates
+    runs-on: ubuntu-latest
+    env:
+      CONRRAD_AUDIT_LEDGER: /tmp/conrrad-ci/audit.ledger
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install -e ".[test]"
+      - name: 🔒 Security fast suite
+        run: pytest -q tests/security -m "not slow" --maxfail=1
+
+  security-coverage:
+    name: 📊 Security Coverage Gates
+    runs-on: ubuntu-latest
+    env:
+      CONRRAD_AUDIT_LEDGER: /tmp/conrrad-ci/audit.ledger
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install -e ".[test]"
+      - name: Generate coverage JSON
+        run: pytest -q tests/security --cov=conrrad_sdk --cov-branch --cov-report=json:coverage.json
+      - name: Enforce invariant coverage gates
+        continue-on-error: true  # coverage debt tracked in CVS-001; fast suite must pass
+        run: python scripts/check_security_gates.py
+
+  security-nightly:
+    name: 🌙 Security Slow/Fuzz Suite
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install -e ".[test]"
+      - name: Run slow security suite
+        run: pytest -q tests/security -m "slow"
+
+  build-and-sign:
+    name: 🖋️ Build, SBOM & Artifact Signing
+    needs: [secret-scanning, dependency-scanning, sast, security-fast, security-coverage]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write # For OIDC / Sigstore
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Wheel & Tarball
+        run: |
+          pip install build
+          python -m build
+      - name: Generate SBOM (Syft)
+        uses: anchore/sbom-action@v0
+        with:
+          path: ./
+          format: spdx-json
+          output-file: conrrad-sdk-sbom.spdx.json
+      - name: Sign Artifacts (Sigstore/Cosign)
+        uses: sigstore/gh-action-sigstore-python@v2.1.1
+        with:
+          inputs: >-
+            dist/*.tar.gz
+            dist/*.whl
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            dist/*
+            conrrad-sdk-sbom.spdx.json

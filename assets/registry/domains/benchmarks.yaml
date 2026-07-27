@@ -1,0 +1,39 @@
+asset_id: SDK.BENCHMARKS.DOMAIN
+name: Benchmarks
+type: Domain
+domain: benchmarks
+path: conrrad_sdk/benchmarks/
+
+owner:
+  domain: Benchmarks
+  steward: Executive Architecture
+
+purpose:
+  canonical: benchmarks domain.
+
+governed_by:
+  - HARLEMM
+  - Executive Architecture
+
+consumed_by:
+  - OMEGA
+  - Executive Core
+
+replacement:
+  status: none
+  successor: null
+
+lifecycle:
+  introduced: "1.0.0"
+  status: ACTIVE
+
+adr:
+  - ADR-TBD
+
+exports:
+  public: true
+
+dependencies: []
+
+contains_glob:
+  - "**/*"
